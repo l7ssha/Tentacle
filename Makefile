@@ -47,10 +47,10 @@ changePubspecDartVersion:
 .PHONY: buildRunner
 buildRunner:
 	@echo "Building runner for Jellyfin"
-	@cd jellyfin && flutter pub get
-	@cd jellyfin && flutter pub run build_runner build --delete-conflicting-outputs
-	@cd jellyseerr && flutter pub get
-	@cd jellyseerr && flutter pub run build_runner build --delete-conflicting-outputs
+	@cd jellyfin && dart pub get
+	@cd jellyfin && dart pub run build_runner build --delete-conflicting-outputs
+	@cd jellyseerr && dart pub get
+	@cd jellyseerr && dart pub run build_runner build --delete-conflicting-outputs
 
 .PHONY: fixErrors
 fixErrors:
