@@ -44,7 +44,7 @@ part 'web_socket_message.g.dart';
 /// Represents the possible websocket types
 ///
 /// Properties:
-/// * [data] - Gets or sets the data.
+/// * [data] - Class UserDto.
 /// * [messageType] - The different kinds of messages that are used in the WebSocket api.
 /// * [messageId] - Gets or sets the message id.
 @BuiltValue()

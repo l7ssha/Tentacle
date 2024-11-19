@@ -13,7 +13,7 @@ part 'sync_play_group_update_command_message.g.dart';
 /// Untyped sync play command.
 ///
 /// Properties:
-/// * [data] - Gets or sets the data.
+/// * [data] - Group update without data.
 /// * [messageId] - Gets or sets the message id.
 /// * [messageType] - The different kinds of messages that are used in the WebSocket api.
 @BuiltValue()
@@ -21,7 +21,7 @@ abstract class SyncPlayGroupUpdateCommandMessage
     implements
         Built<SyncPlayGroupUpdateCommandMessage,
             SyncPlayGroupUpdateCommandMessageBuilder> {
-  /// Gets or sets the data.
+  /// Group update without data.
   @BuiltValueField(wireName: r'Data')
   GroupUpdate? get data;
 

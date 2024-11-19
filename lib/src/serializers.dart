@@ -51,7 +51,6 @@ import 'package:tentacle/src/model/channel_media_content_type.dart';
 import 'package:tentacle/src/model/channel_media_type.dart';
 import 'package:tentacle/src/model/channel_type.dart';
 import 'package:tentacle/src/model/chapter_info.dart';
-import 'package:tentacle/src/model/client_capabilities.dart';
 import 'package:tentacle/src/model/client_capabilities_dto.dart';
 import 'package:tentacle/src/model/client_log_document_response_dto.dart';
 import 'package:tentacle/src/model/codec_profile.dart';
@@ -69,9 +68,9 @@ import 'package:tentacle/src/model/culture_dto.dart';
 import 'package:tentacle/src/model/day_of_week.dart';
 import 'package:tentacle/src/model/day_pattern.dart';
 import 'package:tentacle/src/model/default_directory_browser_info_dto.dart';
-import 'package:tentacle/src/model/device_info.dart';
-import 'package:tentacle/src/model/device_info_query_result.dart';
-import 'package:tentacle/src/model/device_options.dart';
+import 'package:tentacle/src/model/deinterlace_method.dart';
+import 'package:tentacle/src/model/device_info_dto.dart';
+import 'package:tentacle/src/model/device_info_dto_query_result.dart';
 import 'package:tentacle/src/model/device_options_dto.dart';
 import 'package:tentacle/src/model/device_profile.dart';
 import 'package:tentacle/src/model/direct_play_profile.dart';
@@ -80,6 +79,7 @@ import 'package:tentacle/src/model/dlna_profile_type.dart';
 import 'package:tentacle/src/model/down_mix_stereo_algorithms.dart';
 import 'package:tentacle/src/model/dynamic_day_of_week.dart';
 import 'package:tentacle/src/model/embedded_subtitle_options.dart';
+import 'package:tentacle/src/model/encoder_preset.dart';
 import 'package:tentacle/src/model/encoding_context.dart';
 import 'package:tentacle/src/model/encoding_options.dart';
 import 'package:tentacle/src/model/end_point_info.dart';
@@ -110,7 +110,7 @@ import 'package:tentacle/src/model/group_state_update_group_update.dart';
 import 'package:tentacle/src/model/group_update.dart';
 import 'package:tentacle/src/model/group_update_type.dart';
 import 'package:tentacle/src/model/guide_info.dart';
-import 'package:tentacle/src/model/hardware_encoding_type.dart';
+import 'package:tentacle/src/model/hardware_acceleration_type.dart';
 import 'package:tentacle/src/model/i_plugin.dart';
 import 'package:tentacle/src/model/ignore_wait_request_dto.dart';
 import 'package:tentacle/src/model/image_format.dart';
@@ -154,6 +154,9 @@ import 'package:tentacle/src/model/media_attachment.dart';
 import 'package:tentacle/src/model/media_path_dto.dart';
 import 'package:tentacle/src/model/media_path_info.dart';
 import 'package:tentacle/src/model/media_protocol.dart';
+import 'package:tentacle/src/model/media_segment_dto.dart';
+import 'package:tentacle/src/model/media_segment_dto_query_result.dart';
+import 'package:tentacle/src/model/media_segment_type.dart';
 import 'package:tentacle/src/model/media_source_info.dart';
 import 'package:tentacle/src/model/media_source_type.dart';
 import 'package:tentacle/src/model/media_stream.dart';
@@ -210,6 +213,7 @@ import 'package:tentacle/src/model/playback_start_info.dart';
 import 'package:tentacle/src/model/playback_stop_info.dart';
 import 'package:tentacle/src/model/player_state_info.dart';
 import 'package:tentacle/src/model/playlist_creation_result.dart';
+import 'package:tentacle/src/model/playlist_dto.dart';
 import 'package:tentacle/src/model/playlist_user_permissions.dart';
 import 'package:tentacle/src/model/playstate_command.dart';
 import 'package:tentacle/src/model/playstate_message.dart';
@@ -271,7 +275,7 @@ import 'package:tentacle/src/model/server_configuration.dart';
 import 'package:tentacle/src/model/server_discovery_info.dart';
 import 'package:tentacle/src/model/server_restarting_message.dart';
 import 'package:tentacle/src/model/server_shutting_down_message.dart';
-import 'package:tentacle/src/model/session_info.dart';
+import 'package:tentacle/src/model/session_info_dto.dart';
 import 'package:tentacle/src/model/session_message_type.dart';
 import 'package:tentacle/src/model/session_user_info.dart';
 import 'package:tentacle/src/model/sessions_message.dart';
@@ -308,6 +312,9 @@ import 'package:tentacle/src/model/timer_created_message.dart';
 import 'package:tentacle/src/model/timer_event_info.dart';
 import 'package:tentacle/src/model/timer_info_dto.dart';
 import 'package:tentacle/src/model/timer_info_dto_query_result.dart';
+import 'package:tentacle/src/model/tonemapping_algorithm.dart';
+import 'package:tentacle/src/model/tonemapping_mode.dart';
+import 'package:tentacle/src/model/tonemapping_range.dart';
 import 'package:tentacle/src/model/trailer_info.dart';
 import 'package:tentacle/src/model/trailer_info_remote_search_query.dart';
 import 'package:tentacle/src/model/transcode_reason.dart';
@@ -389,7 +396,6 @@ part 'serializers.g.dart';
   ChannelMediaType,
   ChannelType,
   ChapterInfo,
-  ClientCapabilities,
   ClientCapabilitiesDto,
   ClientLogDocumentResponseDto,
   CodecProfile,
@@ -407,9 +413,9 @@ part 'serializers.g.dart';
   DayOfWeek,
   DayPattern,
   DefaultDirectoryBrowserInfoDto,
-  DeviceInfo,
-  DeviceInfoQueryResult,
-  DeviceOptions,
+  DeinterlaceMethod,
+  DeviceInfoDto,
+  DeviceInfoDtoQueryResult,
   DeviceOptionsDto,
   DeviceProfile,
   DirectPlayProfile,
@@ -418,6 +424,7 @@ part 'serializers.g.dart';
   DownMixStereoAlgorithms,
   DynamicDayOfWeek,
   EmbeddedSubtitleOptions,
+  EncoderPreset,
   EncodingContext,
   EncodingOptions,
   EndPointInfo,
@@ -448,7 +455,7 @@ part 'serializers.g.dart';
   GroupUpdate,
   GroupUpdateType,
   GuideInfo,
-  HardwareEncodingType,
+  HardwareAccelerationType,
   IPlugin,
   IgnoreWaitRequestDto,
   ImageFormat,
@@ -492,6 +499,9 @@ part 'serializers.g.dart';
   MediaPathDto,
   MediaPathInfo,
   MediaProtocol,
+  MediaSegmentDto,
+  MediaSegmentDtoQueryResult,
+  MediaSegmentType,
   MediaSourceInfo,
   MediaSourceType,
   MediaStream,
@@ -548,6 +558,7 @@ part 'serializers.g.dart';
   PlaybackStopInfo,
   PlayerStateInfo,
   PlaylistCreationResult,
+  PlaylistDto,
   PlaylistUserPermissions,
   PlaystateCommand,
   PlaystateMessage,
@@ -609,7 +620,7 @@ part 'serializers.g.dart';
   ServerDiscoveryInfo,
   ServerRestartingMessage,
   ServerShuttingDownMessage,
-  SessionInfo,
+  SessionInfoDto,
   SessionMessageType,
   SessionUserInfo,
   SessionsMessage,
@@ -646,6 +657,9 @@ part 'serializers.g.dart';
   TimerEventInfo,
   TimerInfoDto,
   TimerInfoDtoQueryResult,
+  TonemappingAlgorithm,
+  TonemappingMode,
+  TonemappingRange,
   TrailerInfo,
   TrailerInfoRemoteSearchQuery,
   TranscodeReason,
@@ -737,6 +751,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<ParentalRating>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(SessionInfoDto)]),
+        () => ListBuilder<SessionInfoDto>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(RemoteSubtitleInfo)]),
         () => ListBuilder<RemoteSubtitleInfo>(),
       )
@@ -763,10 +781,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ImageProviderInfo)]),
         () => ListBuilder<ImageProviderInfo>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SessionInfo)]),
-        () => ListBuilder<SessionInfo>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ItemFilter)]),
@@ -851,6 +865,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ImageType)]),
         () => ListBuilder<ImageType>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MediaSegmentType)]),
+        () => ListBuilder<MediaSegmentType>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChannelFeatures)]),

@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDeviceInfo**
-> DeviceInfo getDeviceInfo(id)
+> DeviceInfoDto getDeviceInfo(id)
 
 Get info for a device.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInfo**](DeviceInfo.md)
+[**DeviceInfoDto**](DeviceInfoDto.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDeviceOptions**
-> DeviceOptions getDeviceOptions(id)
+> DeviceOptionsDto getDeviceOptions(id)
 
 Get options for a device.
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceOptions**](DeviceOptions.md)
+[**DeviceOptionsDto**](DeviceOptionsDto.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDevices**
-> DeviceInfoQueryResult getDevices(userId)
+> DeviceInfoDtoQueryResult getDevices(userId)
 
 Get Devices.
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInfoQueryResult**](DeviceInfoQueryResult.md)
+[**DeviceInfoDtoQueryResult**](DeviceInfoDtoQueryResult.md)
 
 ### Authorization
 

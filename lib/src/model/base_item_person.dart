@@ -16,7 +16,7 @@ part 'base_item_person.g.dart';
 /// * [name] - Gets or sets the name.
 /// * [id] - Gets or sets the identifier.
 /// * [role] - Gets or sets the role.
-/// * [type] - Gets or sets the type.
+/// * [type] - The person kind.
 /// * [primaryImageTag] - Gets or sets the primary image tag.
 /// * [imageBlurHashes]
 @BuiltValue()
@@ -34,7 +34,7 @@ abstract class BaseItemPerson
   @BuiltValueField(wireName: r'Role')
   String? get role;
 
-  /// Gets or sets the type.
+  /// The person kind.
   @BuiltValueField(wireName: r'Type')
   PersonKind? get type;
   // enum typeEnum {  Unknown,  Actor,  Director,  Composer,  Writer,  GuestStar,  Producer,  Conductor,  Lyricist,  Arranger,  Engineer,  Mixer,  Remixer,  Creator,  Artist,  AlbumArtist,  Author,  Illustrator,  Penciller,  Inker,  Colorist,  Letterer,  CoverArtist,  Editor,  Translator,  };

@@ -57,7 +57,7 @@ part 'user_policy.g.dart';
 /// * [remoteClientBitrateLimit]
 /// * [authenticationProviderId]
 /// * [passwordResetProviderId]
-/// * [syncPlayAccess] - Gets or sets a value indicating what SyncPlay features the user can access.
+/// * [syncPlayAccess] - Enum SyncPlayUserAccessType.
 @BuiltValue()
 abstract class UserPolicy implements Built<UserPolicy, UserPolicyBuilder> {
   /// Gets or sets a value indicating whether this instance is administrator.
@@ -194,7 +194,7 @@ abstract class UserPolicy implements Built<UserPolicy, UserPolicyBuilder> {
   @BuiltValueField(wireName: r'PasswordResetProviderId')
   String get passwordResetProviderId;
 
-  /// Gets or sets a value indicating what SyncPlay features the user can access.
+  /// Enum SyncPlayUserAccessType.
   @BuiltValueField(wireName: r'SyncPlayAccess')
   SyncPlayUserAccessType? get syncPlayAccess;
   // enum syncPlayAccessEnum {  CreateAndJoinGroups,  JoinGroups,  None,  };

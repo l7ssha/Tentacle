@@ -13,7 +13,7 @@ void main() {
       // TODO
     });
 
-    // Enum GroupQueueMode.
+    // Gets or sets the mode in which to add the new items.
     // GroupQueueMode mode
     test('to test the property `mode`', () async {
       // TODO

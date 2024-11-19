@@ -81,6 +81,9 @@ class TranscodeReason extends EnumClass {
   @BuiltValueEnumConst(wireName: r'VideoRangeTypeNotSupported')
   static const TranscodeReason videoRangeTypeNotSupported =
       _$videoRangeTypeNotSupported;
+  @BuiltValueEnumConst(wireName: r'VideoCodecTagNotSupported')
+  static const TranscodeReason videoCodecTagNotSupported =
+      _$videoCodecTagNotSupported;
 
   static Serializer<TranscodeReason> get serializer =>
       _$transcodeReasonSerializer;

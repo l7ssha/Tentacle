@@ -56,7 +56,7 @@ class ItemSortBy extends EnumClass {
 
   /// These represent sort orders.
   @BuiltValueEnumConst(wireName: r'Name')
-  static const ItemSortBy _name = _$name;
+  static const ItemSortBy name = _$name;
 
   /// These represent sort orders.
   @BuiltValueEnumConst(wireName: r'Random')

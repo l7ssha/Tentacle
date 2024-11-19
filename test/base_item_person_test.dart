@@ -25,7 +25,7 @@ void main() {
       // TODO
     });
 
-    // Gets or sets the type.
+    // The person kind.
     // PersonKind type
     test('to test the property `type`', () async {
       // TODO

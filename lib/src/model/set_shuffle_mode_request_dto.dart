@@ -12,12 +12,12 @@ part 'set_shuffle_mode_request_dto.g.dart';
 /// Class SetShuffleModeRequestDto.
 ///
 /// Properties:
-/// * [mode] - Enum GroupShuffleMode.
+/// * [mode] - Gets or sets the shuffle mode.
 @BuiltValue()
 abstract class SetShuffleModeRequestDto
     implements
         Built<SetShuffleModeRequestDto, SetShuffleModeRequestDtoBuilder> {
-  /// Enum GroupShuffleMode.
+  /// Gets or sets the shuffle mode.
   @BuiltValueField(wireName: r'Mode')
   GroupShuffleMode? get mode;
   // enum modeEnum {  Sorted,  Shuffle,  };

@@ -31,14 +31,15 @@ part 'media_stream.g.dart';
 /// * [elPresentFlag] - Gets or sets the Dolby Vision el present flag.
 /// * [blPresentFlag] - Gets or sets the Dolby Vision bl present flag.
 /// * [dvBlSignalCompatibilityId] - Gets or sets the Dolby Vision bl signal compatibility id.
+/// * [rotation] - Gets or sets the Rotation in degrees.
 /// * [comment] - Gets or sets the comment.
 /// * [timeBase] - Gets or sets the time base.
 /// * [codecTimeBase] - Gets or sets the codec time base.
 /// * [title] - Gets or sets the title.
-/// * [videoRange] - Gets the video range.
-/// * [videoRangeType] - Gets the video range type.
+/// * [videoRange] - An enum representing video ranges.
+/// * [videoRangeType] - An enum representing types of video ranges.
 /// * [videoDoViTitle] - Gets the video dovi title.
-/// * [audioSpatialFormat] - Gets the audio spatial format.
+/// * [audioSpatialFormat] - An enum representing formats of spatial audio.
 /// * [localizedUndefined]
 /// * [localizedDefault]
 /// * [localizedForced]
@@ -62,6 +63,7 @@ part 'media_stream.g.dart';
 /// * [width] - Gets or sets the width.
 /// * [averageFrameRate] - Gets or sets the average frame rate.
 /// * [realFrameRate] - Gets or sets the real frame rate.
+/// * [referenceFrameRate] - Gets the framerate used as reference.  Prefer AverageFrameRate, if that is null or an unrealistic value  then fallback to RealFrameRate.
 /// * [profile] - Gets or sets the profile.
 /// * [type] - Gets or sets the type.
 /// * [aspectRatio] - Gets or sets the aspect ratio.
@@ -139,6 +141,10 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
   @BuiltValueField(wireName: r'DvBlSignalCompatibilityId')
   int? get dvBlSignalCompatibilityId;
 
+  /// Gets or sets the Rotation in degrees.
+  @BuiltValueField(wireName: r'Rotation')
+  int? get rotation;
+
   /// Gets or sets the comment.
   @BuiltValueField(wireName: r'Comment')
   String? get comment;
@@ -155,12 +161,12 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
   @BuiltValueField(wireName: r'Title')
   String? get title;
 
-  /// Gets the video range.
+  /// An enum representing video ranges.
   @BuiltValueField(wireName: r'VideoRange')
   VideoRange? get videoRange;
   // enum videoRangeEnum {  Unknown,  SDR,  HDR,  };
 
-  /// Gets the video range type.
+  /// An enum representing types of video ranges.
   @BuiltValueField(wireName: r'VideoRangeType')
   VideoRangeType? get videoRangeType;
   // enum videoRangeTypeEnum {  Unknown,  SDR,  HDR10,  HLG,  DOVI,  DOVIWithHDR10,  DOVIWithHLG,  DOVIWithSDR,  HDR10Plus,  };
@@ -169,7 +175,7 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
   @BuiltValueField(wireName: r'VideoDoViTitle')
   String? get videoDoViTitle;
 
-  /// Gets the audio spatial format.
+  /// An enum representing formats of spatial audio.
   @BuiltValueField(wireName: r'AudioSpatialFormat')
   AudioSpatialFormat? get audioSpatialFormat;
   // enum audioSpatialFormatEnum {  None,  DolbyAtmos,  DTSX,  };
@@ -258,6 +264,10 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
   @BuiltValueField(wireName: r'RealFrameRate')
   double? get realFrameRate;
 
+  /// Gets the framerate used as reference.  Prefer AverageFrameRate, if that is null or an unrealistic value  then fallback to RealFrameRate.
+  @BuiltValueField(wireName: r'ReferenceFrameRate')
+  double? get referenceFrameRate;
+
   /// Gets or sets the profile.
   @BuiltValueField(wireName: r'Profile')
   String? get profile;
@@ -325,7 +335,7 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MediaStreamBuilder b) =>
-      b..audioSpatialFormat = AudioSpatialFormat.none;
+      b..audioSpatialFormat = const ('None',);
 
   @BuiltValueSerializer(custom: true)
   static Serializer<MediaStream> get serializer => _$MediaStreamSerializer();
@@ -445,6 +455,13 @@ class _$MediaStreamSerializer implements PrimitiveSerializer<MediaStream> {
       yield r'DvBlSignalCompatibilityId';
       yield serializers.serialize(
         object.dvBlSignalCompatibilityId,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.rotation != null) {
+      yield r'Rotation';
+      yield serializers.serialize(
+        object.rotation,
         specifiedType: const FullType.nullable(int),
       );
     }
@@ -662,6 +679,13 @@ class _$MediaStreamSerializer implements PrimitiveSerializer<MediaStream> {
       yield r'RealFrameRate';
       yield serializers.serialize(
         object.realFrameRate,
+        specifiedType: const FullType.nullable(double),
+      );
+    }
+    if (object.referenceFrameRate != null) {
+      yield r'ReferenceFrameRate';
+      yield serializers.serialize(
+        object.referenceFrameRate,
         specifiedType: const FullType.nullable(double),
       );
     }
@@ -915,6 +939,14 @@ class _$MediaStreamSerializer implements PrimitiveSerializer<MediaStream> {
           if (valueDes == null) continue;
           result.dvBlSignalCompatibilityId = valueDes;
           break;
+        case r'Rotation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.rotation = valueDes;
+          break;
         case r'Comment':
           final valueDes = serializers.deserialize(
             value,
@@ -1155,6 +1187,14 @@ class _$MediaStreamSerializer implements PrimitiveSerializer<MediaStream> {
           ) as double?;
           if (valueDes == null) continue;
           result.realFrameRate = valueDes;
+          break;
+        case r'ReferenceFrameRate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
+          result.referenceFrameRate = valueDes;
           break;
         case r'Profile':
           final valueDes = serializers.deserialize(

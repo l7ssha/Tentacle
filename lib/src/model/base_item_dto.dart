@@ -90,7 +90,7 @@ part 'base_item_dto.g.dart';
 /// * [isHD] - Gets or sets a value indicating whether this instance is HD.
 /// * [isFolder] - Gets or sets a value indicating whether this instance is folder.
 /// * [parentId] - Gets or sets the parent id.
-/// * [type] - Gets or sets the type.
+/// * [type] - The base item kind.
 /// * [people] - Gets or sets the people.
 /// * [studios] - Gets or sets the studios.
 /// * [genreItems]
@@ -143,7 +143,7 @@ part 'base_item_dto.g.dart';
 /// * [trickplay] - Gets or sets the trickplay manifest.
 /// * [locationType] - Gets or sets the type of the location.
 /// * [isoType] - Gets or sets the type of the iso.
-/// * [mediaType] - Gets or sets the type of the media.
+/// * [mediaType] - Media types.
 /// * [endDate] - Gets or sets the end date.
 /// * [lockedFields] - Gets or sets the locked fields.
 /// * [trailerCount] - Gets or sets the trailer count.
@@ -392,7 +392,7 @@ abstract class BaseItemDto implements Built<BaseItemDto, BaseItemDtoBuilder> {
   @BuiltValueField(wireName: r'ParentId')
   String? get parentId;
 
-  /// Gets or sets the type.
+  /// The base item kind.
   @BuiltValueField(wireName: r'Type')
   BaseItemKind? get type;
   // enum typeEnum {  AggregateFolder,  Audio,  AudioBook,  BasePluginFolder,  Book,  BoxSet,  Channel,  ChannelFolderItem,  CollectionFolder,  Episode,  Folder,  Genre,  ManualPlaylistsFolder,  Movie,  LiveTvChannel,  LiveTvProgram,  MusicAlbum,  MusicArtist,  MusicGenre,  MusicVideo,  Person,  Photo,  PhotoAlbum,  Playlist,  PlaylistsFolder,  Program,  Recording,  Season,  Series,  Studio,  Trailer,  TvChannel,  TvProgram,  UserRootFolder,  UserView,  Video,  Year,  };
@@ -606,7 +606,7 @@ abstract class BaseItemDto implements Built<BaseItemDto, BaseItemDtoBuilder> {
   IsoType? get isoType;
   // enum isoTypeEnum {  Dvd,  BluRay,  };
 
-  /// Gets or sets the type of the media.
+  /// Media types.
   @BuiltValueField(wireName: r'MediaType')
   MediaType? get mediaType;
   // enum mediaTypeEnum {  Unknown,  Video,  Audio,  Photo,  Book,  };

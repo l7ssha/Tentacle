@@ -55,7 +55,7 @@ void main() {
       // TODO
     });
 
-    // Gets or sets the scroll direction.
+    // An enum representing the axis that should be scrolled.
     // ScrollDirection scrollDirection
     test('to test the property `scrollDirection`', () async {
       // TODO
@@ -73,7 +73,7 @@ void main() {
       // TODO
     });
 
-    // Gets or sets the sort order.
+    // An enum representing the sorting order.
     // SortOrder sortOrder
     test('to test the property `sortOrder`', () async {
       // TODO

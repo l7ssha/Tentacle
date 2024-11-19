@@ -42,7 +42,7 @@ part 'outbound_web_socket_message.g.dart';
 /// Represents the list of possible outbound websocket types
 ///
 /// Properties:
-/// * [data] - Gets or sets the data.
+/// * [data] - Class UserDto.
 /// * [messageId] - Gets or sets the message id.
 /// * [messageType] - The different kinds of messages that are used in the WebSocket api.
 @BuiltValue()

@@ -14,7 +14,7 @@ part 'queue_request_dto.g.dart';
 ///
 /// Properties:
 /// * [itemIds] - Gets or sets the items to enqueue.
-/// * [mode] - Enum GroupQueueMode.
+/// * [mode] - Gets or sets the mode in which to add the new items.
 @BuiltValue()
 abstract class QueueRequestDto
     implements Built<QueueRequestDto, QueueRequestDtoBuilder> {
@@ -22,7 +22,7 @@ abstract class QueueRequestDto
   @BuiltValueField(wireName: r'ItemIds')
   BuiltList<String>? get itemIds;
 
-  /// Enum GroupQueueMode.
+  /// Gets or sets the mode in which to add the new items.
   @BuiltValueField(wireName: r'Mode')
   GroupQueueMode? get mode;
   // enum modeEnum {  Queue,  QueueNext,  };

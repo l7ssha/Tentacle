@@ -77,11 +77,6 @@ void main() {
       // TODO
     });
 
-    // String metadataNetworkPath
-    test('to test the property `metadataNetworkPath`', () async {
-      // TODO
-    });
-
     // Gets or sets the preferred metadata language.
     // String preferredMetadataLanguage
     test('to test the property `preferredMetadataLanguage`', () async {

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addItemToPlaylist**](PlaylistsApi.md#additemtoplaylist) | **POST** /Playlists/{playlistId}/Items | Adds items to a playlist.
 [**createPlaylist**](PlaylistsApi.md#createplaylist) | **POST** /Playlists | Creates a new playlist.
+[**getPlaylist**](PlaylistsApi.md#getplaylist) | **GET** /Playlists/{playlistId} | Get a playlist.
 [**getPlaylistItems**](PlaylistsApi.md#getplaylistitems) | **GET** /Playlists/{playlistId}/Items | Gets the original items of a playlist.
 [**getPlaylistUser**](PlaylistsApi.md#getplaylistuser) | **GET** /Playlists/{playlistId}/Users/{userId} | Get a playlist user.
 [**getPlaylistUsers**](PlaylistsApi.md#getplaylistusers) | **GET** /Playlists/{playlistId}/Users | Get a playlist&#39;s users.
@@ -120,6 +121,51 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: application/json, application/json; profile=CamelCase, application/json; profile=PascalCase
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPlaylist**
+> PlaylistDto getPlaylist(playlistId)
+
+Get a playlist.
+
+### Example
+```dart
+import 'package:tentacle/api.dart';
+// TODO Configure API key authorization: CustomAuthentication
+//defaultApiClient.getAuthentication<ApiKeyAuth>('CustomAuthentication').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('CustomAuthentication').apiKeyPrefix = 'Bearer';
+
+final api = Tentacle().getPlaylistsApi();
+final String playlistId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | The playlist id.
+
+try {
+    final response = api.getPlaylist(playlistId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling PlaylistsApi->getPlaylist: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlistId** | **String**| The playlist id. | 
+
+### Return type
+
+[**PlaylistDto**](PlaylistDto.md)
+
+### Authorization
+
+[CustomAuthentication](../README.md#CustomAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, application/json; profile=CamelCase, application/json; profile=PascalCase
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

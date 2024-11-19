@@ -25,7 +25,8 @@ part 'open_live_stream_dto.g.dart';
 /// * [itemId] - Gets or sets the item id.
 /// * [enableDirectPlay] - Gets or sets a value indicating whether to enable direct play.
 /// * [enableDirectStream] - Gets or sets a value indicating whether to enale direct stream.
-/// * [deviceProfile] - A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.  <br />  Specifically, it defines the supported <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles\">containers</see> and  <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles\">codecs</see> (video and/or audio, including codec profiles and levels)  the device is able to direct play (without transcoding or remuxing),  as well as which <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles\">containers/codecs to transcode to</see> in case it isn't.
+/// * [alwaysBurnInSubtitleWhenTranscoding] - Gets or sets a value indicating whether always burn in subtitles when transcoding.
+/// * [deviceProfile] - Gets or sets the device profile.
 /// * [directPlayProtocols] - Gets or sets the device play protocols.
 @BuiltValue()
 abstract class OpenLiveStreamDto
@@ -74,7 +75,11 @@ abstract class OpenLiveStreamDto
   @BuiltValueField(wireName: r'EnableDirectStream')
   bool? get enableDirectStream;
 
-  /// A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.  <br />  Specifically, it defines the supported <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles\">containers</see> and  <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles\">codecs</see> (video and/or audio, including codec profiles and levels)  the device is able to direct play (without transcoding or remuxing),  as well as which <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles\">containers/codecs to transcode to</see> in case it isn't.
+  /// Gets or sets a value indicating whether always burn in subtitles when transcoding.
+  @BuiltValueField(wireName: r'AlwaysBurnInSubtitleWhenTranscoding')
+  bool? get alwaysBurnInSubtitleWhenTranscoding;
+
+  /// Gets or sets the device profile.
   @BuiltValueField(wireName: r'DeviceProfile')
   DeviceProfile? get deviceProfile;
 
@@ -182,6 +187,13 @@ class _$OpenLiveStreamDtoSerializer
       yield r'EnableDirectStream';
       yield serializers.serialize(
         object.enableDirectStream,
+        specifiedType: const FullType.nullable(bool),
+      );
+    }
+    if (object.alwaysBurnInSubtitleWhenTranscoding != null) {
+      yield r'AlwaysBurnInSubtitleWhenTranscoding';
+      yield serializers.serialize(
+        object.alwaysBurnInSubtitleWhenTranscoding,
         specifiedType: const FullType.nullable(bool),
       );
     }
@@ -311,6 +323,14 @@ class _$OpenLiveStreamDtoSerializer
           ) as bool?;
           if (valueDes == null) continue;
           result.enableDirectStream = valueDes;
+          break;
+        case r'AlwaysBurnInSubtitleWhenTranscoding':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.alwaysBurnInSubtitleWhenTranscoding = valueDes;
           break;
         case r'DeviceProfile':
           final valueDes = serializers.deserialize(

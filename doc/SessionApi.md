@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSessions**
-> BuiltList<SessionInfo> getSessions(controllableByUserId, deviceId, activeWithinSeconds)
+> BuiltList<SessionInfoDto> getSessions(controllableByUserId, deviceId, activeWithinSeconds)
 
 Gets a list of sessions.
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;SessionInfo&gt;**](SessionInfo.md)
+[**BuiltList&lt;SessionInfoDto&gt;**](SessionInfoDto.md)
 
 ### Authorization
 

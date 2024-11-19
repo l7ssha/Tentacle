@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
@@ -40,6 +41,7 @@ class UniversalAudioApi {
   /// * [maxAudioSampleRate] - Optional. The maximum audio sample rate.
   /// * [maxAudioBitDepth] - Optional. The maximum audio bit depth.
   /// * [enableRemoteMedia] - Optional. Whether to enable remote media.
+  /// * [enableAudioVbrEncoding] - Optional. Whether to enable Audio Encoding.
   /// * [breakOnNonKeyFrames] - Optional. Whether to break on non key frames.
   /// * [enableRedirection] - Whether to enable redirection. Defaults to true.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -68,6 +70,7 @@ class UniversalAudioApi {
     int? maxAudioSampleRate,
     int? maxAudioBitDepth,
     bool? enableRemoteMedia,
+    bool? enableAudioVbrEncoding = true,
     bool? breakOnNonKeyFrames = false,
     bool? enableRedirection = true,
     CancelToken? cancelToken,
@@ -151,6 +154,9 @@ class UniversalAudioApi {
       if (enableRemoteMedia != null)
         r'enableRemoteMedia': encodeQueryParameter(
             _serializers, enableRemoteMedia, const FullType(bool)),
+      if (enableAudioVbrEncoding != null)
+        r'enableAudioVbrEncoding': encodeQueryParameter(
+            _serializers, enableAudioVbrEncoding, const FullType(bool)),
       if (breakOnNonKeyFrames != null)
         r'breakOnNonKeyFrames': encodeQueryParameter(
             _serializers, breakOnNonKeyFrames, const FullType(bool)),
@@ -215,6 +221,7 @@ class UniversalAudioApi {
   /// * [maxAudioSampleRate] - Optional. The maximum audio sample rate.
   /// * [maxAudioBitDepth] - Optional. The maximum audio bit depth.
   /// * [enableRemoteMedia] - Optional. Whether to enable remote media.
+  /// * [enableAudioVbrEncoding] - Optional. Whether to enable Audio Encoding.
   /// * [breakOnNonKeyFrames] - Optional. Whether to break on non key frames.
   /// * [enableRedirection] - Whether to enable redirection. Defaults to true.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -243,6 +250,7 @@ class UniversalAudioApi {
     int? maxAudioSampleRate,
     int? maxAudioBitDepth,
     bool? enableRemoteMedia,
+    bool? enableAudioVbrEncoding = true,
     bool? breakOnNonKeyFrames = false,
     bool? enableRedirection = true,
     CancelToken? cancelToken,
@@ -326,6 +334,9 @@ class UniversalAudioApi {
       if (enableRemoteMedia != null)
         r'enableRemoteMedia': encodeQueryParameter(
             _serializers, enableRemoteMedia, const FullType(bool)),
+      if (enableAudioVbrEncoding != null)
+        r'enableAudioVbrEncoding': encodeQueryParameter(
+            _serializers, enableAudioVbrEncoding, const FullType(bool)),
       if (breakOnNonKeyFrames != null)
         r'breakOnNonKeyFrames': encodeQueryParameter(
             _serializers, breakOnNonKeyFrames, const FullType(bool)),

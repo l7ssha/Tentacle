@@ -22,10 +22,10 @@ part 'display_preferences_dto.g.dart';
 /// * [primaryImageHeight] - Gets or sets the height of the primary image.
 /// * [primaryImageWidth] - Gets or sets the width of the primary image.
 /// * [customPrefs] - Gets or sets the custom prefs.
-/// * [scrollDirection] - Gets or sets the scroll direction.
+/// * [scrollDirection] - An enum representing the axis that should be scrolled.
 /// * [showBackdrop] - Gets or sets a value indicating whether to show backdrops on this item.
 /// * [rememberSorting] - Gets or sets a value indicating whether [remember sorting].
-/// * [sortOrder] - Gets or sets the sort order.
+/// * [sortOrder] - An enum representing the sorting order.
 /// * [showSidebar] - Gets or sets a value indicating whether [show sidebar].
 /// * [client] - Gets or sets the client.
 @BuiltValue()
@@ -63,7 +63,7 @@ abstract class DisplayPreferencesDto
   @BuiltValueField(wireName: r'CustomPrefs')
   BuiltMap<String, String?>? get customPrefs;
 
-  /// Gets or sets the scroll direction.
+  /// An enum representing the axis that should be scrolled.
   @BuiltValueField(wireName: r'ScrollDirection')
   ScrollDirection? get scrollDirection;
   // enum scrollDirectionEnum {  Horizontal,  Vertical,  };
@@ -76,7 +76,7 @@ abstract class DisplayPreferencesDto
   @BuiltValueField(wireName: r'RememberSorting')
   bool? get rememberSorting;
 
-  /// Gets or sets the sort order.
+  /// An enum representing the sorting order.
   @BuiltValueField(wireName: r'SortOrder')
   SortOrder? get sortOrder;
   // enum sortOrderEnum {  Ascending,  Descending,  };

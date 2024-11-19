@@ -73,7 +73,14 @@ void main() {
       // TODO
     });
 
-    // A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.  <br />  Specifically, it defines the supported <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles\">containers</see> and  <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles\">codecs</see> (video and/or audio, including codec profiles and levels)  the device is able to direct play (without transcoding or remuxing),  as well as which <see cref=\"P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles\">containers/codecs to transcode to</see> in case it isn't.
+    // Gets or sets a value indicating whether always burn in subtitles when transcoding.
+    // bool alwaysBurnInSubtitleWhenTranscoding
+    test('to test the property `alwaysBurnInSubtitleWhenTranscoding`',
+        () async {
+      // TODO
+    });
+
+    // Gets or sets the device profile.
     // DeviceProfile deviceProfile
     test('to test the property `deviceProfile`', () async {
       // TODO

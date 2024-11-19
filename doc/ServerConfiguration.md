@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **enableCaseSensitiveItemIds** | **bool** | Gets or sets a value indicating whether [enable case sensitive item ids]. | [optional] 
 **disableLiveTvChannelUserDataName** | **bool** |  | [optional] 
 **metadataPath** | **String** | Gets or sets the metadata path. | [optional] 
-**metadataNetworkPath** | **String** |  | [optional] 
 **preferredMetadataLanguage** | **String** | Gets or sets the preferred metadata language. | [optional] 
 **metadataCountryCode** | **String** | Gets or sets the metadata country code. | [optional] 
 **sortReplaceCharacters** | **BuiltList&lt;String&gt;** | Gets or sets characters to be replaced with a ' ' in strings to create a sort name. | [optional] 

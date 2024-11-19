@@ -18,6 +18,9 @@ part 'tuner_host_info.g.dart';
 /// * [friendlyName]
 /// * [importFavoritesOnly]
 /// * [allowHWTranscoding]
+/// * [allowFmp4TranscodingContainer]
+/// * [allowStreamSharing]
+/// * [fallbackMaxStreamingBitrate]
 /// * [enableStreamLooping]
 /// * [source_]
 /// * [tunerCount]
@@ -46,6 +49,15 @@ abstract class TunerHostInfo
 
   @BuiltValueField(wireName: r'AllowHWTranscoding')
   bool? get allowHWTranscoding;
+
+  @BuiltValueField(wireName: r'AllowFmp4TranscodingContainer')
+  bool? get allowFmp4TranscodingContainer;
+
+  @BuiltValueField(wireName: r'AllowStreamSharing')
+  bool? get allowStreamSharing;
+
+  @BuiltValueField(wireName: r'FallbackMaxStreamingBitrate')
+  int? get fallbackMaxStreamingBitrate;
 
   @BuiltValueField(wireName: r'EnableStreamLooping')
   bool? get enableStreamLooping;
@@ -134,6 +146,27 @@ class _$TunerHostInfoSerializer implements PrimitiveSerializer<TunerHostInfo> {
       yield serializers.serialize(
         object.allowHWTranscoding,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.allowFmp4TranscodingContainer != null) {
+      yield r'AllowFmp4TranscodingContainer';
+      yield serializers.serialize(
+        object.allowFmp4TranscodingContainer,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.allowStreamSharing != null) {
+      yield r'AllowStreamSharing';
+      yield serializers.serialize(
+        object.allowStreamSharing,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.fallbackMaxStreamingBitrate != null) {
+      yield r'FallbackMaxStreamingBitrate';
+      yield serializers.serialize(
+        object.fallbackMaxStreamingBitrate,
+        specifiedType: const FullType(int),
       );
     }
     if (object.enableStreamLooping != null) {
@@ -249,6 +282,27 @@ class _$TunerHostInfoSerializer implements PrimitiveSerializer<TunerHostInfo> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.allowHWTranscoding = valueDes;
+          break;
+        case r'AllowFmp4TranscodingContainer':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.allowFmp4TranscodingContainer = valueDes;
+          break;
+        case r'AllowStreamSharing':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.allowStreamSharing = valueDes;
+          break;
+        case r'FallbackMaxStreamingBitrate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.fallbackMaxStreamingBitrate = valueDes;
           break;
         case r'EnableStreamLooping':
           final valueDes = serializers.deserialize(

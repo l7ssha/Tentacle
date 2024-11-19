@@ -17,6 +17,7 @@ part 'library_options_result_dto.g.dart';
 /// * [metadataSavers] - Gets or sets the metadata savers.
 /// * [metadataReaders] - Gets or sets the metadata readers.
 /// * [subtitleFetchers] - Gets or sets the subtitle fetchers.
+/// * [lyricFetchers] - Gets or sets the list of lyric fetchers.
 /// * [typeOptions] - Gets or sets the type options.
 @BuiltValue()
 abstract class LibraryOptionsResultDto
@@ -32,6 +33,10 @@ abstract class LibraryOptionsResultDto
   /// Gets or sets the subtitle fetchers.
   @BuiltValueField(wireName: r'SubtitleFetchers')
   BuiltList<LibraryOptionInfoDto>? get subtitleFetchers;
+
+  /// Gets or sets the list of lyric fetchers.
+  @BuiltValueField(wireName: r'LyricFetchers')
+  BuiltList<LibraryOptionInfoDto>? get lyricFetchers;
 
   /// Gets or sets the type options.
   @BuiltValueField(wireName: r'TypeOptions')
@@ -87,6 +92,14 @@ class _$LibraryOptionsResultDtoSerializer
       yield r'SubtitleFetchers';
       yield serializers.serialize(
         object.subtitleFetchers,
+        specifiedType:
+            const FullType(BuiltList, [FullType(LibraryOptionInfoDto)]),
+      );
+    }
+    if (object.lyricFetchers != null) {
+      yield r'LyricFetchers';
+      yield serializers.serialize(
+        object.lyricFetchers,
         specifiedType:
             const FullType(BuiltList, [FullType(LibraryOptionInfoDto)]),
       );
@@ -147,6 +160,14 @@ class _$LibraryOptionsResultDtoSerializer
                 const FullType(BuiltList, [FullType(LibraryOptionInfoDto)]),
           ) as BuiltList<LibraryOptionInfoDto>;
           result.subtitleFetchers.replace(valueDes);
+          break;
+        case r'LyricFetchers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(BuiltList, [FullType(LibraryOptionInfoDto)]),
+          ) as BuiltList<LibraryOptionInfoDto>;
+          result.lyricFetchers.replace(valueDes);
           break;
         case r'TypeOptions':
           final valueDes = serializers.deserialize(

@@ -12,11 +12,11 @@ part 'set_repeat_mode_request_dto.g.dart';
 /// Class SetRepeatModeRequestDto.
 ///
 /// Properties:
-/// * [mode] - Enum GroupRepeatMode.
+/// * [mode] - Gets or sets the repeat mode.
 @BuiltValue()
 abstract class SetRepeatModeRequestDto
     implements Built<SetRepeatModeRequestDto, SetRepeatModeRequestDtoBuilder> {
-  /// Enum GroupRepeatMode.
+  /// Gets or sets the repeat mode.
   @BuiltValueField(wireName: r'Mode')
   GroupRepeatMode? get mode;
   // enum modeEnum {  RepeatOne,  RepeatAll,  RepeatNone,  };

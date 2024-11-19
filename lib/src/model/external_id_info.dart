@@ -33,6 +33,7 @@ abstract class ExternalIdInfo
   // enum typeEnum {  Album,  AlbumArtist,  Artist,  BoxSet,  Episode,  Movie,  OtherArtist,  Person,  ReleaseGroup,  Season,  Series,  Track,  Book,  };
 
   /// Gets or sets the URL format string.
+  @Deprecated('urlFormatString has been deprecated')
   @BuiltValueField(wireName: r'UrlFormatString')
   String? get urlFormatString;
 

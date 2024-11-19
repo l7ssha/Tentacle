@@ -26,10 +26,10 @@ part 'search_hint.g.dart';
 /// * [thumbImageItemId] - Gets or sets the thumb image item identifier.
 /// * [backdropImageTag] - Gets or sets the backdrop image tag.
 /// * [backdropImageItemId] - Gets or sets the backdrop image item identifier.
-/// * [type] - Gets or sets the type.
+/// * [type] - The base item kind.
 /// * [isFolder] - Gets or sets a value indicating whether this instance is folder.
 /// * [runTimeTicks] - Gets or sets the run time ticks.
-/// * [mediaType] - Gets or sets the type of the media.
+/// * [mediaType] - Media types.
 /// * [startDate] - Gets or sets the start date.
 /// * [endDate] - Gets or sets the end date.
 /// * [series] - Gets or sets the series.
@@ -94,7 +94,7 @@ abstract class SearchHint implements Built<SearchHint, SearchHintBuilder> {
   @BuiltValueField(wireName: r'BackdropImageItemId')
   String? get backdropImageItemId;
 
-  /// Gets or sets the type.
+  /// The base item kind.
   @BuiltValueField(wireName: r'Type')
   BaseItemKind? get type;
   // enum typeEnum {  AggregateFolder,  Audio,  AudioBook,  BasePluginFolder,  Book,  BoxSet,  Channel,  ChannelFolderItem,  CollectionFolder,  Episode,  Folder,  Genre,  ManualPlaylistsFolder,  Movie,  LiveTvChannel,  LiveTvProgram,  MusicAlbum,  MusicArtist,  MusicGenre,  MusicVideo,  Person,  Photo,  PhotoAlbum,  Playlist,  PlaylistsFolder,  Program,  Recording,  Season,  Series,  Studio,  Trailer,  TvChannel,  TvProgram,  UserRootFolder,  UserView,  Video,  Year,  };
@@ -107,7 +107,7 @@ abstract class SearchHint implements Built<SearchHint, SearchHintBuilder> {
   @BuiltValueField(wireName: r'RunTimeTicks')
   int? get runTimeTicks;
 
-  /// Gets or sets the type of the media.
+  /// Media types.
   @BuiltValueField(wireName: r'MediaType')
   MediaType? get mediaType;
   // enum mediaTypeEnum {  Unknown,  Video,  Audio,  Photo,  Book,  };

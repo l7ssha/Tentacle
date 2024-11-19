@@ -97,6 +97,12 @@ void main() {
       // TODO
     });
 
+    // Gets or sets the Rotation in degrees.
+    // int rotation
+    test('to test the property `rotation`', () async {
+      // TODO
+    });
+
     // Gets or sets the comment.
     // String comment
     test('to test the property `comment`', () async {
@@ -121,13 +127,13 @@ void main() {
       // TODO
     });
 
-    // Gets the video range.
+    // An enum representing video ranges.
     // VideoRange videoRange
     test('to test the property `videoRange`', () async {
       // TODO
     });
 
-    // Gets the video range type.
+    // An enum representing types of video ranges.
     // VideoRangeType videoRangeType
     test('to test the property `videoRangeType`', () async {
       // TODO
@@ -139,7 +145,7 @@ void main() {
       // TODO
     });
 
-    // Gets the audio spatial format.
+    // An enum representing formats of spatial audio.
     // AudioSpatialFormat audioSpatialFormat (default value: 'None')
     test('to test the property `audioSpatialFormat`', () async {
       // TODO
@@ -272,6 +278,12 @@ void main() {
     // Gets or sets the real frame rate.
     // double realFrameRate
     test('to test the property `realFrameRate`', () async {
+      // TODO
+    });
+
+    // Gets the framerate used as reference.  Prefer AverageFrameRate, if that is null or an unrealistic value  then fallback to RealFrameRate.
+    // double referenceFrameRate
+    test('to test the property `referenceFrameRate`', () async {
       // TODO
     });
 

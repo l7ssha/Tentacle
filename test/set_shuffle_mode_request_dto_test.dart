@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(SetShuffleModeRequestDto, () {
-    // Enum GroupShuffleMode.
+    // Gets or sets the shuffle mode.
     // GroupShuffleMode mode
     test('to test the property `mode`', () async {
       // TODO

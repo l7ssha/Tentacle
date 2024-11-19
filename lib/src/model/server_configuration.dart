@@ -32,7 +32,6 @@ part 'server_configuration.g.dart';
 /// * [enableCaseSensitiveItemIds] - Gets or sets a value indicating whether [enable case sensitive item ids].
 /// * [disableLiveTvChannelUserDataName]
 /// * [metadataPath] - Gets or sets the metadata path.
-/// * [metadataNetworkPath]
 /// * [preferredMetadataLanguage] - Gets or sets the preferred metadata language.
 /// * [metadataCountryCode] - Gets or sets the metadata country code.
 /// * [sortReplaceCharacters] - Gets or sets characters to be replaced with a ' ' in strings to create a sort name.
@@ -123,9 +122,6 @@ abstract class ServerConfiguration
   /// Gets or sets the metadata path.
   @BuiltValueField(wireName: r'MetadataPath')
   String? get metadataPath;
-
-  @BuiltValueField(wireName: r'MetadataNetworkPath')
-  String? get metadataNetworkPath;
 
   /// Gets or sets the preferred metadata language.
   @BuiltValueField(wireName: r'PreferredMetadataLanguage')
@@ -392,13 +388,6 @@ class _$ServerConfigurationSerializer
       yield r'MetadataPath';
       yield serializers.serialize(
         object.metadataPath,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.metadataNetworkPath != null) {
-      yield r'MetadataNetworkPath';
-      yield serializers.serialize(
-        object.metadataNetworkPath,
         specifiedType: const FullType(String),
       );
     }
@@ -808,13 +797,6 @@ class _$ServerConfigurationSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.metadataPath = valueDes;
-          break;
-        case r'MetadataNetworkPath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.metadataNetworkPath = valueDes;
           break;
         case r'PreferredMetadataLanguage':
           final valueDes = serializers.deserialize(

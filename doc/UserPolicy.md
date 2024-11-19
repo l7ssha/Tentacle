@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **remoteClientBitrateLimit** | **int** |  | [optional] 
 **authenticationProviderId** | **String** |  | 
 **passwordResetProviderId** | **String** |  | 
-**syncPlayAccess** | [**SyncPlayUserAccessType**](SyncPlayUserAccessType.md) | Gets or sets a value indicating what SyncPlay features the user can access. | [optional] 
+**syncPlayAccess** | [**SyncPlayUserAccessType**](SyncPlayUserAccessType.md) | Enum SyncPlayUserAccessType. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

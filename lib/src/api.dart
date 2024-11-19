@@ -38,6 +38,7 @@ import 'package:tentacle/src/api/live_tv_api.dart';
 import 'package:tentacle/src/api/localization_api.dart';
 import 'package:tentacle/src/api/lyrics_api.dart';
 import 'package:tentacle/src/api/media_info_api.dart';
+import 'package:tentacle/src/api/media_segments_api.dart';
 import 'package:tentacle/src/api/movies_api.dart';
 import 'package:tentacle/src/api/music_genres_api.dart';
 import 'package:tentacle/src/api/package_api.dart';
@@ -306,6 +307,12 @@ class Tentacle {
   /// by doing that all interceptors will not be executed
   MediaInfoApi getMediaInfoApi() {
     return MediaInfoApi(dio, serializers);
+  }
+
+  /// Get MediaSegmentsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MediaSegmentsApi getMediaSegmentsApi() {
+    return MediaSegmentsApi(dio, serializers);
   }
 
   /// Get MoviesApi instance, base route and serializer can be overridden by a given but be careful,

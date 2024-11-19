@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(SetRepeatModeRequestDto, () {
-    // Enum GroupRepeatMode.
+    // Gets or sets the repeat mode.
     // GroupRepeatMode mode
     test('to test the property `mode`', () async {
       // TODO
