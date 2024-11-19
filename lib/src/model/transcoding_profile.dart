@@ -118,9 +118,9 @@ abstract class TranscodingProfile
   static void _defaults(TranscodingProfileBuilder b) => b
     ..estimateContentLength = false
     ..enableMpegtsM2TsMode = false
-    ..transcodeSeekInfo = const ('Auto',)
+    ..transcodeSeekInfo = TranscodeSeekInfo.auto
     ..copyTimestamps = false
-    ..context = const ('Streaming',)
+    ..context = EncodingContext.streaming
     ..enableSubtitlesInManifest = false
     ..minSegments = 0
     ..segmentLength = 0

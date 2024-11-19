@@ -335,7 +335,7 @@ abstract class MediaStream implements Built<MediaStream, MediaStreamBuilder> {
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MediaStreamBuilder b) =>
-      b..audioSpatialFormat = const ('None',);
+      b..audioSpatialFormat = AudioSpatialFormat.none;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<MediaStream> get serializer => _$MediaStreamSerializer();
